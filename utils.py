@@ -2,6 +2,7 @@ import pandas as pd
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
+from sklearn.ensemble import RandomForestClassifier
 
 
 def modify_data(file_path):
@@ -71,3 +72,20 @@ def build_nn():
     ])
 
     return [model1, model2, model3]
+
+
+def build_rf():
+    rf1 = RandomForestClassifier(n_estimators=200, max_depth=7, min_samples_split=4, max_features='sqrt',
+                                 random_state='42')
+    rf2 = RandomForestClassifier(n_estimators=300, max_depth=15, min_samples_split=2, max_features='log2',
+                                 random_state='42')
+    rf3 = RandomForestClassifier(n_estimators=150, max_depth=10, min_samples_split=3, max_features='sqrt',
+                                 random_state='42')
+
+    rf1.name = 'rf1'
+    rf2.name = 'rf2'
+    rf3.name = 'rf3'
+
+    print(rf3.name)
+
+    return [rf1, rf2, rf3]
