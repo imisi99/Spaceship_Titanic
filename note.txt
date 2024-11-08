@@ -1,0 +1,9 @@
+Roomservice = The Roomservice affects the target cause as the value increase it leans more towards false from 5000 the target value
+becomes 0 for all the values after that
+Age = The age doesn't really affect the target value
+FoodCourt = The FoodCourt affects the target cause as the value increase it leans more towards true from 18000 to 30000
+the target is true only
+ShoppingMall = This is not very deterministic as it has it stops here and there from above 5000 the target leans towards
+True but some outliners like 10500 gives false
+Spa = from the value 6000 and above the target value leans towards false all through
+VRDeck = From the value 7000 and above the target value leans towards false all through
