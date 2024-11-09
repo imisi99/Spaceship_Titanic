@@ -39,7 +39,7 @@ def modify_data(file_path):
 
 
 def build_nn():
-    tf.random.set_seed(42)
+    tf.random.set_seed(20)
     model1 = Sequential([
         Dense(120, activation='relu'),
         Dense(80, activation='relu'),
@@ -69,23 +69,24 @@ def build_nn():
         Dense(12, activation='relu'),
         Dense(4, activation='relu'),
         Dense(1, activation='linear')
-    ])
+    ],
+        name='model3')
 
-    return [model1, model2, model3]
+    model_l = [model1, model2, model3]
+
+    return model_l
 
 
 def build_rf():
-    rf1 = RandomForestClassifier(n_estimators=200, max_depth=7, min_samples_split=4, max_features='sqrt',
-                                 random_state='42')
-    rf2 = RandomForestClassifier(n_estimators=300, max_depth=15, min_samples_split=2, max_features='log2',
-                                 random_state='42')
+    rf1 = RandomForestClassifier(n_estimators=200, max_depth=7, min_samples_split=4, max_features='log2',
+                                 random_state=42)
+    rf2 = RandomForestClassifier(n_estimators=300, max_depth=15, min_samples_split=2, max_features='sqrt',
+                                 random_state=42)
     rf3 = RandomForestClassifier(n_estimators=150, max_depth=10, min_samples_split=3, max_features='sqrt',
-                                 random_state='42')
+                                 random_state=42)
 
     rf1.name = 'rf1'
     rf2.name = 'rf2'
     rf3.name = 'rf3'
-
-    print(rf3.name)
 
     return [rf1, rf2, rf3]
