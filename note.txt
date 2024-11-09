@@ -8,6 +8,8 @@ True but some outliners like 10500 gives false
 Spa = from the value 6000 and above the target value leans towards false all through
 VRDeck = From the value 7000 and above the target value leans towards false all through
 
-The Accuracy Score for model1: [0.79654889 0.74501534]
-The Accuracy Score for model2: [0.81676253 0.74923313]
-The Accuracy Score for sequential: [0.79309778 0.76150307]
+
+0.6
+The Accuracy Score for rf1: [0.77466206 0.75618171]
+The Accuracy Score for rf2: [0.85993673 0.77400805]
+The Accuracy Score for rf3: [0.81018119 0.76595745]
