@@ -11,10 +11,10 @@ def modify_data(file_path):
 
     print(df.head())
 
-    df = df.drop(columns=['PassengerId', 'Name', 'Cabin', 'VIP', 'Age'])
+    df = df.drop(columns=['PassengerId', 'Name', 'Cabin'])
 
     # filling nan values
-    # df['Age'] = df['Age'].fillna(df['Age'].mean())
+    df['Age'] = df['Age'].fillna(df['Age'].mean())
     df['RoomService'] = df['RoomService'].fillna(df['RoomService'].mean())
     df['FoodCourt'] = df['FoodCourt'].fillna(df['FoodCourt'].mean())
     df['ShoppingMall'] = df['ShoppingMall'].fillna(df['ShoppingMall'].mean())
@@ -22,11 +22,12 @@ def modify_data(file_path):
     df['VRDeck'] = df['VRDeck'].fillna(df['VRDeck'].mean())
 
     df['CryoSleep'] = df['CryoSleep'].fillna(0)
+    df['VIP'] = df['VIP'].fillna(0)
     df['HomePlanet'] = df['HomePlanet'].fillna('Unknown')
     df['Destination'] = df['Destination'].fillna('Unknown')
 
     # Converting categorical data to one hot encoding
-    df = pd.get_dummies(df, columns=['HomePlanet', 'CryoSleep', 'Destination'], drop_first=True)
+    df = pd.get_dummies(df, columns=['HomePlanet', 'CryoSleep', 'Destination'])
 
     # Converting boolean data to numerical data
     bool_columns = df.select_dtypes(include='bool').columns
