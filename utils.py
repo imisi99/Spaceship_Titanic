@@ -27,7 +27,7 @@ def modify_data(file_path):
     df['Destination'] = df['Destination'].fillna('Unknown')
 
     # Converting categorical data to one hot encoding
-    df = pd.get_dummies(df, columns=['HomePlanet', 'CryoSleep', 'Destination'])
+    df = pd.get_dummies(df, columns=['HomePlanet', 'CryoSleep', 'Destination'], drop_first=True)
 
     # Converting boolean data to numerical data
     bool_columns = df.select_dtypes(include='bool').columns
