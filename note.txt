@@ -9,7 +9,6 @@ Spa = from the value 6000 and above the target value leans towards false all thr
 VRDeck = From the value 7000 and above the target value leans towards false all through
 
 
-0.6
-The Accuracy Score for rf1: [0.77466206 0.75618171]
-The Accuracy Score for rf2: [0.85993673 0.77400805]
-The Accuracy Score for rf3: [0.81018119 0.76595745]
+rf = 0.7793103448275862
+lr = 0.767816091954023
+nn = 0.7724137931034483
