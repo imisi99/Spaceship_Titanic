@@ -3,6 +3,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from sklearn.ensemble import RandomForestClassifier
+from xgboost import XGBClassifier
 
 
 def modify_data(file_path):
@@ -91,3 +92,14 @@ def build_rf():
     rf3.name = 'rf3'
 
     return [rf1, rf2, rf3]
+
+def build_xgb():
+    xgb1 = XGBClassifier(n_estimators=400, max_depth=7, learning_rate=0.001, gamma=1)
+    xgb2 = XGBClassifier(n_estimators=800, max_depth=15, learning_rate=0.003, gamma=4)
+    xgb3 = XGBClassifier(n_estimators=1500, max_depth=10, learning_rate=0.1, gamma=6)
+
+    xgb1.name = 'xgb1'
+    xgb2.name = 'xgb2'
+    xgb3.name = 'xgb3'
+
+    return [xgb1, xgb2, xgb3]
