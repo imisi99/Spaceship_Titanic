@@ -95,7 +95,7 @@ def build_rf():
 
 def build_xgb():
     xgb1 = XGBClassifier(n_estimators=400, max_depth=7, learning_rate=0.001, gamma=1)
-    xgb2 = XGBClassifier(n_estimators=800, max_depth=15, learning_rate=0.003, gamma=4)
+    xgb2 = XGBClassifier(n_estimators=900, max_depth=15, learning_rate=0.13, gamma=2)
     xgb3 = XGBClassifier(n_estimators=1500, max_depth=10, learning_rate=0.1, gamma=6)
 
     xgb1.name = 'xgb1'
